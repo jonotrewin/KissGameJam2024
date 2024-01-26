@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class CharacterMovement : MonoBehaviour
 {
+    float _speed = 15f;
+
     private CharacterController _characterController;
 
     [SerializeField] private GameObject _characterVisual;
@@ -18,12 +21,13 @@ public class CharacterMovement : MonoBehaviour
     }
 
     
+    
     void Update()
     {
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
 
-        _characterController.Move(new Vector3(-yDirection, 0, xDirection) * 0.1f);
+        _characterController.Move(new Vector3(-yDirection, 0, xDirection) * Time.deltaTime * _speed);
 
         LocateMouse();
 
@@ -34,7 +38,10 @@ public class CharacterMovement : MonoBehaviour
         //    transform.position = _mousePosition;
         //}
 
+        
     }
+
+    
 
     private void RotateVisual()
     {
