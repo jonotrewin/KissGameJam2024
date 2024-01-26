@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IInteract
 { 
 
-    public virtual void Interact()
+    public virtual void Interact(GameObject player)
     { }
 }
