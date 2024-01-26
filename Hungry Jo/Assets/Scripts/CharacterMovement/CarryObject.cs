@@ -128,9 +128,7 @@ public class CarryObject : MonoBehaviour
 
                 interactable.Interact(gameObject);
 
-                _interactedObject = col.gameObject;
-
-                _isCrarryingSomething = true;
+               
 
 
 

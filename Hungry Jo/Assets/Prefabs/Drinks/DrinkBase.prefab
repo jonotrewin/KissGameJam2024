@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6109330965401615512}
   - component: {fileID: 7958077373548701055}
+  - component: {fileID: -3050978716139455984}
+  - component: {fileID: 2298918799700900918}
+  - component: {fileID: -4111176394031813912}
   m_Layer: 0
   m_Name: DrinkBase
   m_TagString: Untagged
@@ -44,4 +47,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841c86902374acb44bbe6818529c85de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cocktailKeyRecipe: 
+  _cocktailKeyRecipe: 00000000
+--- !u!114 &-3050978716139455984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123482103262415671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8ef6d7abe6ea940b2a6d7eb82c1a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Curve: {fileID: 3167546537838237056, guid: 741108726680d084ca328480c9724e7a, type: 3}
+--- !u!114 &2298918799700900918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123482103262415671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822dd82bea3740a42b0ea62d5909908e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMoveable: 1
+--- !u!65 &-4111176394031813912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123482103262415671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

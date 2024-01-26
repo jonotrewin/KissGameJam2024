@@ -14,9 +14,9 @@ public class Bar : MonoBehaviour, IInteract
 
     [SerializeField]GameObject[] _drinks;
    
-    void IInteract.Interact(UnityEngine.GameObject player)
+    void IInteract.Interact(GameObject player)
     {
-       
+       _listeningToKeySequence = true;
     }
 
     void Update()

@@ -358,6 +358,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7958077373548701055, guid: f1a7e854e2e77cb44889d4f5ef64214b,
+        type: 3}
+      propertyPath: _cocktailKeyRecipe.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9123482103262415671, guid: f1a7e854e2e77cb44889d4f5ef64214b,
         type: 3}
       propertyPath: m_Name

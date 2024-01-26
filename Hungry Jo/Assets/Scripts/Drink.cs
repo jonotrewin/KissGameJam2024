@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drink : MonoBehaviour
+public class Drink : MonoBehaviour, ICarryable
 {
     // Start is called before the first frame update
     public List<KeyCode> _cocktailKeyRecipe;
