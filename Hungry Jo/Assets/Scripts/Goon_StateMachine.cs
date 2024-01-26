@@ -5,12 +5,24 @@ using UnityEngine;
 public class Goon_StateMachine : StateMachine
 {
     private Goon_State_ReadyToOrder _readyToOrder;
+    [SerializeField]Goon_Statistics _statistics;
     private void Start()
     {
         _readyToOrder = new Goon_State_ReadyToOrder(this);
+        base.Start();
+      
+   
     }
     protected override BasicState GetInitialState()
     {
-        return base.GetInitialState();
+        return _readyToOrder; //change this later to waiting to be seated
+        
+
     }
+
+    
+
+   
+
+
 }

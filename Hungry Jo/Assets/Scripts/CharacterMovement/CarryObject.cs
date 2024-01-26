@@ -42,7 +42,7 @@ public class CarryObject : MonoBehaviour
         {
             if (col.TryGetComponent<IInteract>(out IInteract interactable))
             {
-                interactable.Interact();
+                interactable.Interact(this.gameObject);
 
                 _interactedObject = col.gameObject;
 

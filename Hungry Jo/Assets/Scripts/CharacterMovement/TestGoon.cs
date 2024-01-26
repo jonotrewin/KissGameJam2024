@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestGoon : MonoBehaviour, IInteract
 {
-    void IInteract.Interact()
+    void IInteract.Interact(GameObject gameObject)
     {
         Debug.Log("Picked up Goon");
     }

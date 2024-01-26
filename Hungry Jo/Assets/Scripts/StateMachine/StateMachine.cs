@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    protected BasicState _currentState;
+    [SerializeField]protected BasicState _currentState;
     public BasicState CurrentState { get { return _currentState; } }
 
 
