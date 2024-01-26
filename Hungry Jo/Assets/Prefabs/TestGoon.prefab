@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 5100429768317555781}
   - component: {fileID: 5100429768317555897}
   - component: {fileID: 5100429768317555896}
+  - component: {fileID: 6864887702150455216}
   m_Layer: 0
   m_Name: TestGoon
   m_TagString: Untagged
@@ -222,4 +223,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8ef6d7abe6ea940b2a6d7eb82c1a07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsMoveable: 1
+  Curve: {fileID: 3167546537838237056, guid: 741108726680d084ca328480c9724e7a, type: 3}
+--- !u!114 &6864887702150455216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100429768317555782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8ef6d7abe6ea940b2a6d7eb82c1a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsMoveable: 1
   Curve: {fileID: 3167546537838237056, guid: 741108726680d084ca328480c9724e7a, type: 3}

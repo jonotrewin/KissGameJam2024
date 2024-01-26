@@ -58,7 +58,7 @@ public class CarryObject : MonoBehaviour
 
         middle.y = 7;
 
-        _interactedObject.GetComponent<FlyGoonFly>().Fly(_interactedObject.transform, _mousePosition, middle);
+        _interactedObject.GetComponent<Throwable>().Fly(_interactedObject.transform, _mousePosition, middle);
 
         //_interactedObject.GetComponent<Rigidbody>().velocity = ;
 
@@ -109,7 +109,7 @@ public class CarryObject : MonoBehaviour
         {
             if (col.TryGetComponent<ICarryable>(out ICarryable carryable))
             {
-                if (col.gameObject.GetComponent<TestGoon>().IsMoveable)
+                if (col.gameObject.GetComponent<Throwable>().IsMoveable)
                 {
                     _interactedObject = col.gameObject;
 

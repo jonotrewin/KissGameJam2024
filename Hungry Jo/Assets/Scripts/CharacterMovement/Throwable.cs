@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyGoonFly : MonoBehaviour
+public class Throwable : MonoBehaviour, ICarryable
 {
     //public Transform A;
     //public Transform B;
     //public Transform Control;
+
+    public bool IsMoveable = true;
 
     public CurveThing Curve;
 
