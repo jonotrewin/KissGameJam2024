@@ -14,7 +14,7 @@ public class SpawnerGoon : MonoBehaviour
     float _time = 0;
     int _spawnDelay = 10;
 
-    [SerializeField] Transform _spawnTransform;
+    //[SerializeField] Transform _spawnTransform;
 
     //int[] spawnNumbers = new int[4];
 
