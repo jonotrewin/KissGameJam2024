@@ -22,7 +22,6 @@ public class Chair : MonoBehaviour
             if (col.TryGetComponent<Goon_SitDown>(out Goon_SitDown goon) && goon.isSittingDown)
             {
                 occupied = true;
-
                 return;
             }
             else occupied = false;

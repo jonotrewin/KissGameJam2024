@@ -110,8 +110,11 @@ GameObject:
   - component: {fileID: 5100429768317555780}
   - component: {fileID: 5100429768317555781}
   - component: {fileID: 6864887702150455216}
-  - component: {fileID: 369429170240028583}
-  - component: {fileID: -8416440759433734365}
+  - component: {fileID: 3294090268253841353}
+  - component: {fileID: 349232040}
+  - component: {fileID: 349232034}
+  - component: {fileID: 349232041}
+  - component: {fileID: 349232042}
   m_Layer: 0
   m_Name: TestGoon
   m_TagString: Goon
@@ -213,7 +216,7 @@ MonoBehaviour:
   IsMoveable: 1
   Curve: {fileID: 3167546537838237056, guid: 1b19ed439dc537047a1f592373c11299, type: 3}
   _isFlying: 0
---- !u!114 &369429170240028583
+--- !u!114 &3294090268253841353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,13 +225,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5100429768317555782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5fe4d2e87299ac4fad3b32e7ffd873c, type: 3}
+  m_Script: {fileID: 11500000, guid: 55291636bad18ef4a9f764f932de3f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testDrink: {fileID: 0}
-  orderManager: {fileID: 0}
-  orderSequence: 
---- !u!54 &-8416440759433734365
+  _statistics: {fileID: 0}
+  _sitDown: {fileID: 0}
+--- !u!54 &349232040
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,3 +246,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &349232034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100429768317555782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fe4d2e87299ac4fad3b32e7ffd873c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testDrink: {fileID: 0}
+  orderManager: {fileID: 0}
+  orderSequence: 
+--- !u!114 &349232041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100429768317555782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95cfbc5f21268fe478b24d72bebd792b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gangColour: 0
+  _maxHappiness: 100
+  _currentHappiness: 0
+  happinessLowerAmount: 0.1
+  happinessRaiseAmount: 0.1
+  _musicColourMatchModifier: 0.9
+  lowerHappiness: 1
+--- !u!114 &349232042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100429768317555782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b7539f8ee352a40a34da8b543228af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSittingDown: 0

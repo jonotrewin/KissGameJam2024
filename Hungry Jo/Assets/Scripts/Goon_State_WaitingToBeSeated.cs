@@ -4,19 +4,30 @@ using UnityEngine;
 
 public class Goon_State_WaitingToBeSeated : BasicState
 {
-    Goon_StateMachine goonStateMachine;
+    Goon_StateMachine _gSM;
 
     public Goon_State_WaitingToBeSeated(Goon_StateMachine gsm) : base("WaitingToBeSeated", gsm)
     {
-        goonStateMachine = gsm;
+       _gSM= gsm;
     }
 
     public override void UpdateLogic()
     {
-       
-        goonStateMachine._statistics.LowerHappiness(1);
+        Debug.Log("LALA");
+        stateMachine.GetComponent<Goon_StateMachine>()._statistics.LowerHappiness(1);
+
+        if(_gSM._sitDown.isSittingDown)
+        {
+            
+        }
+
         base.UpdateLogic();
     }
 
-    
+
+    public override void Enter()
+    {
+            
+    }
+
 }

@@ -28,9 +28,5 @@ public class Goon_State_ReadyToOrder : BasicState, IInteract
         goonStateMachine._statistics.LowerHappiness(1);
         base.UpdateLogic();
     }
-    
-    public void OnMouseDown()
-    {
-        
-    }
+   
 }

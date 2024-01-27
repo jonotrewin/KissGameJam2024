@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class Goon_StateMachine : StateMachine
 {
+    private Goon_State_WaitingToBeSeated _waitingToBeSeated;
     private Goon_State_ReadyToOrder _readyToOrder;
+
+
     [SerializeField]public Goon_Statistics _statistics;
-    private void Start()
+    [SerializeField] public Goon_SitDown _sitDown;
+    private void Awake()
     {
+
+        Debug.Log("Blq blq");
+        _waitingToBeSeated = new Goon_State_WaitingToBeSeated(this);
         _readyToOrder = new Goon_State_ReadyToOrder(this);
-        base.Start();
+
+        Debug.Log("Blq blqff f"+ _readyToOrder);
+
+        _statistics = GetComponent<Goon_Statistics>();
+        
       
    
     }
+
+    
     protected override BasicState GetInitialState()
     {
-        return _readyToOrder; //change this later to waiting to be seated
+        return _waitingToBeSeated; 
+
         
 
     }

@@ -15,10 +15,10 @@ public class Goon_Orders : MonoBehaviour
     }
     private void OnEnable()
     {
-        Debug.Log("Enabled");
+     
         
         orderSequence = orderManager.GetOrderSequence();
-        Debug.Log("Order Sequence");
+        
     }
     void Start()
     {

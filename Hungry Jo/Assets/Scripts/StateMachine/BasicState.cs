@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicState : MonoBehaviour
+public class BasicState 
 {
-    public string name;
+    public string stateName;
     protected StateMachine stateMachine;
 
     public BasicState(string name, StateMachine stateMachine)
     {
-        this.name = name;
+        this.stateName = name;
         this.stateMachine = stateMachine;
     }
 
