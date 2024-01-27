@@ -67,14 +67,22 @@ public class CarryObject : MonoBehaviour
 
             if (col.TryGetComponent<IInteract>(out IInteract interactable))
             {
-                _interactUI.SetActive(true);
+                if (_interactUI != null)
+                {
+                    _interactUI.SetActive(true);
+                }
+                
                 //interactable.Interact(gameObject);
 
                 return;
             }
             else
             {
-                _interactUI.SetActive(false);
+                if (_interactUI != null)
+                {
+                    _interactUI.SetActive(false);
+                }
+                //_interactUI.SetActive(false);
             }
 
 
