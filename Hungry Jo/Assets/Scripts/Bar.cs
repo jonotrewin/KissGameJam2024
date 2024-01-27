@@ -18,9 +18,11 @@ public class Bar : MonoBehaviour, IInteract
 
     [SerializeField]BarUI barUI;
 
+    [SerializeField] JuiceLevels juiceLevels;
     private void Awake()
     {
         _orderManager = GameObject.FindObjectOfType<OrderManager>();
+        juiceLevels = GetComponent<JuiceLevels>();
        
        
     }

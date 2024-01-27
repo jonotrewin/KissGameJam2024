@@ -73,6 +73,7 @@ MonoBehaviour:
   _drinks:
   - {fileID: 3381668471104894807, guid: d402baf5685b30f458c2ae134cf2ff2d, type: 3}
   _orderManager: {fileID: 0}
+  barUI: {fileID: 0}
 --- !u!1001 &3141273410334499504
 PrefabInstance:
   m_ObjectHideFlags: 0
