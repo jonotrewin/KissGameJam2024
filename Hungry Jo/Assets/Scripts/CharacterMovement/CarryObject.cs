@@ -92,6 +92,8 @@ public class CarryObject : MonoBehaviour
                         {
                             SetUITexts(col.gameObject);
 
+
+
                             _tabletUI.SetActive(true);
                             _interactUI.SetActive(true);
                         }
@@ -129,7 +131,9 @@ public class CarryObject : MonoBehaviour
 
     private void SetUITexts(GameObject goonGameObject)
     {
-       
+        goonGameObject.GetComponent<Goon_Statistics>().SetTabletDate();
+
+        goonGameObject.GetComponent<Goon_Orders>().SetKeyCodesOnUI();
     }
 
     private void CheckForObjectToInteractWith()

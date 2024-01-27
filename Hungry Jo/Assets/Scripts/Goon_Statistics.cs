@@ -23,7 +23,25 @@ public class Goon_Statistics : MonoBehaviour
     [SerializeField] bool lowerHappiness = true;
 
 
+    public void SetTabletDate()
+    {
+        Tablet.InteractedGoonGangName = _gangColour.ToString();
 
+        if (_gangColour == Colour.Red)
+        {
+            Tablet.InteractedGoonMusicName = "Rock";
+        }
+        else if (_gangColour == Colour.Green)
+        {
+            Tablet.InteractedGoonMusicName = "Disco";
+        }
+        else
+        {
+            Tablet.InteractedGoonMusicName = "Jazz";
+        }
+
+        Tablet.InteractedGoonMoodValue = _currentHappiness / _maxHappiness;
+    }
 
     private void Update()
     {
