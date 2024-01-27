@@ -40,6 +40,8 @@ public class CarryObject : MonoBehaviour
             if (IsCrarryingSomething)
             {
                 ThrowObject();
+               _interactedObject = null;
+                EventManager.onThrow?.Invoke(_interactedObject); // calls the on throw in event manager
             }
 
             
@@ -115,10 +117,18 @@ public class CarryObject : MonoBehaviour
 
                     IsCrarryingSomething = true;
 
+                    if (_interactedObject.TryGetComponent<Goon_SitDown>(out Goon_SitDown sitDown))
+                    {
+                        sitDown.PickUpLogic();
+                        Debug.Log("Picked");
+                    }
 
+                    EventManager.onPickUp.Invoke(col.gameObject);
 
                     return;
                 }
+
+                
 
             }
 

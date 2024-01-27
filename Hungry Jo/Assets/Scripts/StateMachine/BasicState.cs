@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicState 
+public class BasicState : MonoBehaviour
 {
     public string name;
     protected StateMachine stateMachine;

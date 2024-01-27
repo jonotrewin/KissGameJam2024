@@ -52,5 +52,7 @@ public class Goon_Statistics : MonoBehaviour
         _currentHappiness += (happinessRaiseAmount * multiplier);
     }
 
- 
+    
+
+
 }

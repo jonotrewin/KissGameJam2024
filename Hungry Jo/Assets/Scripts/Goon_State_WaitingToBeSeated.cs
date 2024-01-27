@@ -17,4 +17,6 @@ public class Goon_State_WaitingToBeSeated : BasicState
         goonStateMachine._statistics.LowerHappiness(1);
         base.UpdateLogic();
     }
+
+    
 }

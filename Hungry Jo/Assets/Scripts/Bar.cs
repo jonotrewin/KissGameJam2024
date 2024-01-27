@@ -48,7 +48,7 @@ public class Bar : MonoBehaviour, IInteract
         if(Input.GetKeyDown(KeyCode.E) ||  _currentKeysForCocktail.Count >=4)
         {
             _listeningToKeySequence = false;
-            if (_currentKeysForCocktail.Count <= 1 )
+            if (_currentKeysForCocktail.Count < 1 )
             {
                 return;
             }
