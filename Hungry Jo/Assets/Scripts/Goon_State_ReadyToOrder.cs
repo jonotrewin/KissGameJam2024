@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Goon_State_ReadyToOrder : BasicState, IInteract
 {
-    Goon_StateMachine goonStateMachine;
-
-    
+    Goon_StateMachine goonStateMachine;   
 
 
 

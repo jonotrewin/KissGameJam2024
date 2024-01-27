@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Goon_StateMachine : StateMachine
 {
-    private Goon_State_WaitingToBeSeated _waitingToBeSeated;
-    private Goon_State_ReadyToOrder _readyToOrder;
+    public Goon_State_WaitingToBeSeated _waitingToBeSeated;
+    public Goon_State_ReadyToOrder _readyToOrder;
 
 
     [SerializeField]public Goon_Statistics _statistics;
@@ -13,7 +13,7 @@ public class Goon_StateMachine : StateMachine
     private void Awake()
     {
 
-        Debug.Log("Blq blq");
+        Debug.Log("Blq blq");   
         _waitingToBeSeated = new Goon_State_WaitingToBeSeated(this);
         _readyToOrder = new Goon_State_ReadyToOrder(this);
 

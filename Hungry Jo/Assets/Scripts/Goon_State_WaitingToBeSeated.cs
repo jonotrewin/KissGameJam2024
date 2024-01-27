@@ -18,7 +18,7 @@ public class Goon_State_WaitingToBeSeated : BasicState
 
         if(_gSM._sitDown.isSittingDown)
         {
-            
+            stateMachine.ChangeStates(_gSM._readyToOrder);
         }
 
         base.UpdateLogic();
