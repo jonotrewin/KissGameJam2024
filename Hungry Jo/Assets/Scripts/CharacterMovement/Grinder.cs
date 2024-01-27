@@ -5,20 +5,29 @@ using UnityEngine;
 
 public class Grinder : MonoBehaviour
 {
-    
 
-    private void OnCollisionEnter(Collision collision)
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Goon"))
+    //    {
+    //        collision.gameObject.SetActive(false);
+    //        //GrindTheGoon(collision.gameObject);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Goon"))
+        if (other.gameObject.CompareTag("Goon"))
         {
-            GrindTheGoon(collision.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 
-    private void GrindTheGoon(GameObject goonObject)
-    {
-        //Incriese meter
+    //private void GrindTheGoon(GameObject goonObject)
+    //{
+    //    //Incriese meter
 
-        Destroy(goonObject);
-    }
+    //    Destroy(goonObject);
+    //}
 }
