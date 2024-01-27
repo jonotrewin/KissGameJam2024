@@ -1,29 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
 
 public class Grinder : MonoBehaviour
 {
     
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.gameObject.CompareTag("Goon"))
+        if (collision.gameObject.CompareTag("Goon"))
         {
-            GrindTheGoon(other.gameObject);
-
-            //Destroy(other.gameObject);
+            GrindTheGoon(collision.gameObject);
         }
-
-        
     }
 
     private void GrindTheGoon(GameObject goonObject)
     {
         //Incriese meter
 
-        goonObject.SetActive(false);
+        Destroy(goonObject);
     }
 }
