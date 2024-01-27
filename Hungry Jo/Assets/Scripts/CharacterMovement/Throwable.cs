@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Throwable : MonoBehaviour, ICarryable, IInteract
+public class Throwable : MonoBehaviour, ICarryable
 {
     //public Transform A;
     //public Transform B;

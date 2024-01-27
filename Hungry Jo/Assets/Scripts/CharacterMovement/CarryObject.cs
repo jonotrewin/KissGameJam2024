@@ -31,9 +31,17 @@ public class CarryObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForObjectToInteractWith();
+        
 
         CheckForGoonsToInteractWith();
+
+        
+
+        if (IsCrarryingSomething)
+        {
+            _interactUI.SetActive(false);
+            _tabletUI.SetActive(false);
+        }
 
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -47,6 +55,7 @@ public class CarryObject : MonoBehaviour
         {
             if (IsCrarryingSomething)
             {
+                
                 ThrowObject();
                 if(_interactedObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
                 {
@@ -62,7 +71,7 @@ public class CarryObject : MonoBehaviour
 
     private void CheckForGoonsToInteractWith()
     {
-        if (IsCrarryingSomething) return;
+        //if (IsCrarryingSomething) return;
 
         Collider[] interactables = Physics.OverlapSphere(this.transform.position + _characterVisual.transform.forward * 1.5f, 1.5f);
 
@@ -76,9 +85,17 @@ public class CarryObject : MonoBehaviour
                 {
                     if (_tabletUI != null)
                     {
-                        _tabletUI.SetActive(true);
+                        if (!col.gameObject.GetComponent<Throwable>()._isFlying)
+                        {
+                            SetUITexts(col.gameObject);
 
+                            _tabletUI.SetActive(true);
+                            _interactUI.SetActive(true);
+                        }
 
+                        
+
+                        //Debug.Log("setsitActive");
                     }
                 }
 
@@ -93,7 +110,10 @@ public class CarryObject : MonoBehaviour
                 if (_tabletUI != null)
                 {
                     _tabletUI.SetActive(false);
+                    _interactUI.SetActive(false);
                 }
+
+                CheckForObjectToInteractWith();
                 //_interactUI.SetActive(false);
             }
 
@@ -102,6 +122,11 @@ public class CarryObject : MonoBehaviour
 
 
         }
+    }
+
+    private void SetUITexts(GameObject goonGameObject)
+    {
+        throw new NotImplementedException();
     }
 
     private void CheckForObjectToInteractWith()
@@ -116,6 +141,10 @@ public class CarryObject : MonoBehaviour
             {
                 if (_interactUI != null)
                 {
+                    //if (!col.gameObject.GetComponent<Throwable>()._isFlying)
+                    //{
+                    //    _interactUI.SetActive(true);
+                    //}
                     _interactUI.SetActive(true);
                 }
                 
