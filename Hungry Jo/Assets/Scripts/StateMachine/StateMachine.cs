@@ -27,6 +27,7 @@ public class StateMachine : MonoBehaviour
 
         if (_currentState != null)
         {
+            Debug.Log(CurrentState);
             _currentState.UpdateLogic();
         }
     }

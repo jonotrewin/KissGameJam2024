@@ -13,13 +13,14 @@ public class Goon_StateMachine : StateMachine
     private void Awake()
     {
 
-        Debug.Log("Blq blq");   
+         
         _waitingToBeSeated = new Goon_State_WaitingToBeSeated(this);
         _readyToOrder = new Goon_State_ReadyToOrder(this);
 
-        Debug.Log("Blq blqff f"+ _readyToOrder);
+      
 
         _statistics = GetComponent<Goon_Statistics>();
+        _sitDown = GetComponent<Goon_SitDown>();
         
       
    

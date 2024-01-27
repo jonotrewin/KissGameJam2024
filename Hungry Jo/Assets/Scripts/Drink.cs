@@ -21,6 +21,16 @@ public class Drink : MonoBehaviour, ICarryable
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("HOLA");
+       if(collision.gameObject.TryGetComponent<Goon_StateMachine>(out Goon_StateMachine gsm))
+        {
+            if(gsm.CurrentState == gsm._readyToOrder)
+            {
+                if(gsm.GetComponent<Goon_Orders>().TestDrink(_cocktailKeyRecipe))
+                {
+                    gsm.ChangeStates(gsm._waitingToBeSeated);
+                    Destroy(this);
+                }
+            }
+        }
     }
 }

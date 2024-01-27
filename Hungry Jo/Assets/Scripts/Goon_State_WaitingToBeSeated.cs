@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Goon_State_WaitingToBeSeated : BasicState
@@ -19,6 +20,8 @@ public class Goon_State_WaitingToBeSeated : BasicState
         if(_gSM._sitDown.isSittingDown)
         {
             stateMachine.ChangeStates(_gSM._readyToOrder);
+            Debug.Log("Ready To Order!");
+            
         }
 
         base.UpdateLogic();

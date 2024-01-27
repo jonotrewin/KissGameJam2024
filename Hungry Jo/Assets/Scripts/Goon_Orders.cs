@@ -34,22 +34,24 @@ public class Goon_Orders : MonoBehaviour
         }
     }
 
-    public void TestDrink(List<KeyCode> drinkOrderSequence)
+    public bool TestDrink(List<KeyCode> drinkOrderSequence)
     {
         if(drinkOrderSequence.Count != orderSequence.Count)
         {
             Debug.Log("No Match");
+            return false;
         }
         for(int i = 0; i < drinkOrderSequence.Count; i++)
         {
             if (drinkOrderSequence[i] != orderSequence[i])
             {
                 Debug.Log("No Match!");
-                return;
+                return false;
             }
 
             
         }
         Debug.Log("Perfect Match");
+        return true;
     }
 }

@@ -303,6 +303,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3050978716139455984, guid: f1a7e854e2e77cb44889d4f5ef64214b,
+        type: 3}
+      propertyPath: Curve
+      value: 
+      objectReference: {fileID: 3167546537838237056, guid: 1b19ed439dc537047a1f592373c11299,
+        type: 3}
     - target: {fileID: 6109330965401615512, guid: f1a7e854e2e77cb44889d4f5ef64214b,
         type: 3}
       propertyPath: m_RootOrder
@@ -368,7 +374,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Martini
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2298918799700900918, guid: f1a7e854e2e77cb44889d4f5ef64214b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1a7e854e2e77cb44889d4f5ef64214b, type: 3}
 --- !u!4 &341063045075812600 stripped
 Transform:

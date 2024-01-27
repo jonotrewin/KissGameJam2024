@@ -30,7 +30,7 @@ public class Goon_Statistics : MonoBehaviour
         if ((int)Jukebox.singleton._musicGenrePlaying == (int)_gangColour)
         {
             RaiseHappiness(_musicColourMatchModifier);
-            Debug.Log("Happy!");
+            //Debug.Log("Happy!");
         }
 
        // Mathf.Clamp(_currentHappiness, 0, _maxHappiness);
