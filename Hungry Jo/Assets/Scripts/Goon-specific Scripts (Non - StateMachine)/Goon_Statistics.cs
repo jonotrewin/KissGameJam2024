@@ -32,15 +32,19 @@ public class Goon_Statistics : MonoBehaviour
 
         if (_gangColour == Colour.Red)
         {
-            Tablet.InteractedGoonMusicName = "Rock";
+            Tablet.InteractedGoonMusicName = "Favorite Music: Rock";
         }
         else if (_gangColour == Colour.Green)
         {
-            Tablet.InteractedGoonMusicName = "Disco";
+            Tablet.InteractedGoonMusicName = "Favorite Music: Disco";
+        }
+        else if (_gangColour == Colour.Blue)
+        {
+            Tablet.InteractedGoonMusicName = "Favorite Music: Jazz";
         }
         else
         {
-            Tablet.InteractedGoonMusicName = "Jazz";
+            Tablet.InteractedGoonMusicName = "Favorite Music: Who cares?";
         }
 
         Tablet.InteractedGoonMoodValue = _currentHappiness / _maxHappiness;

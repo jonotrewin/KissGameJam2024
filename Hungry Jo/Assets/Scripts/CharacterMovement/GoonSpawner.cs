@@ -23,6 +23,7 @@ public class GoonSpawner : MonoBehaviour
 
     private void Start()
     {
+<<<<<<< Updated upstream
         //SpawnGoon();
         //Instantiate(RedGoonPrefab, _spawnTransform);
     }
@@ -31,6 +32,16 @@ public class GoonSpawner : MonoBehaviour
     //{
     //    Instantiate
     //}
+=======
+        SpawnGoon();
+        //Instantiate(RedGoonPrefab, _spawnTransform);
+    }
+
+    private void SpawnGoon()
+    {
+        
+    }
+>>>>>>> Stashed changes
 
     void Update()
     {
