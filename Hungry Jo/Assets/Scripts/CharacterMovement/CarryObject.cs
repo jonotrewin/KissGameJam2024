@@ -166,7 +166,7 @@ public class CarryObject : MonoBehaviour
                         Debug.Log("Picked");
                     }
 
-                    EventManager.onPickUp.Invoke(col.gameObject);
+                    EventManager.onPickUp?.Invoke(col.gameObject);
 
                     
 

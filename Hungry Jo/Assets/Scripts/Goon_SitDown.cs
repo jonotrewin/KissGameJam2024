@@ -47,7 +47,7 @@ public class Goon_SitDown : MonoBehaviour
     public void StandUp()
     {
 
-        chairSittingOn.occupied = false;
+        if(chairSittingOn != null)chairSittingOn.occupied = false;
         transform.parent =null;
         rb.isKinematic = false;
         isSittingDown = false;
