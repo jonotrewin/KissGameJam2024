@@ -16,9 +16,13 @@ public class Bar : MonoBehaviour, IInteract
 
     [SerializeField]OrderManager _orderManager;
 
+    [SerializeField]BarUI barUI;
+
     private void Awake()
     {
         _orderManager = GameObject.FindObjectOfType<OrderManager>();
+       
+       
     }
     void IInteract.Interact(GameObject player)
     {
@@ -37,7 +41,12 @@ public class Bar : MonoBehaviour, IInteract
 
     void Update()
     {
-        if(_listeningToKeySequence)ListenToKeys();
+        if (_listeningToKeySequence) 
+        { 
+            ListenToKeys();
+            barUI.gameObject.SetActive(true);
+        }
+       
     }
 
     void ListenToKeys()
@@ -54,16 +63,22 @@ public class Bar : MonoBehaviour, IInteract
         {
             interactingPlayer.GetComponent<CharacterMovement>().canMove = true;
             _listeningToKeySequence = false;
-            if (_currentKeysForCocktail.Count < 1 )
+
+            if (_currentKeysForCocktail.Count < 1)
             {
                 return;
             }
             CreateCocktail();
-            _currentKeysForCocktail.Clear();
-           
-
+            StartCoroutine(CloseBarUI());
 
         }
+    }
+
+    private IEnumerator CloseBarUI()
+    {
+        yield return new WaitForSeconds(2);
+        _currentKeysForCocktail.Clear();
+        barUI.gameObject.SetActive(false);
     }
 
     private void CreateCocktail()
@@ -81,14 +96,5 @@ public class Bar : MonoBehaviour, IInteract
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.TryGetComponent<Goon_StateMachine>(out Goon_StateMachine gsm))
-        {
-            if(gsm.CurrentState is Goon_State_ReadyToOrder)
-            {
-                
-            }
-        }
-    }
+   
 }

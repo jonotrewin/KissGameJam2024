@@ -21,7 +21,7 @@ public class BarUI : MonoBehaviour
     {
         for(int i = 0; i < bar._currentKeysForCocktail.Count+1; i++)
         {
-           
+            keyTexts[i].text = bar._currentKeysForCocktail[i].ToString();
         }
     }
 }
