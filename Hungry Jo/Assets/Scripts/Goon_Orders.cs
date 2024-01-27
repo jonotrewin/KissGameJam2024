@@ -5,12 +5,20 @@ using UnityEngine;
 public class Goon_Orders : MonoBehaviour
 {
     [SerializeField] Drink testDrink;
+    [SerializeField] OrderManager orderManager;
 
     public List<KeyCode> orderSequence = new List<KeyCode>();
 
+    private void Awake()
+    {
+        orderManager = GameObject.FindAnyObjectByType<OrderManager>();
+    }
     private void OnEnable()
     {
-        orderSequence = OrderManager.singleton.GetOrderSequence();
+        Debug.Log("Enabled");
+        
+        orderSequence = orderManager.GetOrderSequence();
+        Debug.Log("Order Sequence");
     }
     void Start()
     {

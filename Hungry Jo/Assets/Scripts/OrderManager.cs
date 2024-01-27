@@ -7,19 +7,10 @@ using Random = UnityEngine.Random;
 
 public class OrderManager : MonoBehaviour
 {
-    public static OrderManager singleton;
     public KeyCode[] keyCodesForOrders = new KeyCode[4];
     // Start is called before the first frame update
 
-    private void Awake()
-    {
-        if(singleton != null)
-        {
-            Destroy(singleton);
-            singleton = this;
-        }
-        singleton = this;
-    }
+ 
 
     public List<KeyCode> GetOrderSequence()
     {
@@ -39,5 +30,7 @@ public class OrderManager : MonoBehaviour
         return sequence;
 
     }
-    
+
+ 
+
 }

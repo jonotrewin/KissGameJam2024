@@ -9,6 +9,8 @@ public class Goon_Statistics : MonoBehaviour
         Red, Green, Blue, Police
     }
 
+    [SerializeField] private Goon_Statistics.Colour _gangColour;
+
     [SerializeField] int _maxHappiness = 100;
     [SerializeField] float _currentHappiness;
     public float CurrentHappiness { get { return _currentHappiness; } }
@@ -16,12 +18,22 @@ public class Goon_Statistics : MonoBehaviour
     [SerializeField]float happinessLowerAmount = 0.1f;
     [SerializeField]float happinessRaiseAmount = 0.1f;
 
+    [SerializeField] float _musicColourMatchModifier = 0.9f;
+
     [SerializeField] bool lowerHappiness = true;
+
+
 
 
     private void Update()
     {
-       
+        if ((int)Jukebox.singleton._musicGenrePlaying == (int)_gangColour)
+        {
+            RaiseHappiness(_musicColourMatchModifier);
+            Debug.Log("Happy!");
+        }
+
+       // Mathf.Clamp(_currentHappiness, 0, _maxHappiness);
     }
     private void OnEnable()
     {
@@ -39,4 +51,6 @@ public class Goon_Statistics : MonoBehaviour
 
         _currentHappiness += (happinessRaiseAmount * multiplier);
     }
+
+ 
 }
