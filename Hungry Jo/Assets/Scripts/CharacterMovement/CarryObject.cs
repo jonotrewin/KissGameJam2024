@@ -40,6 +40,10 @@ public class CarryObject : MonoBehaviour
             if (IsCrarryingSomething)
             {
                 ThrowObject();
+                if(_interactedObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
+                {
+                        rb.isKinematic = false;
+                }
                _interactedObject = null;
                 EventManager.onThrow?.Invoke(_interactedObject); // calls the on throw in event manager
             }
@@ -115,15 +119,19 @@ public class CarryObject : MonoBehaviour
                 {
                     _interactedObject = col.gameObject;
 
+                    _interactedObject.GetComponent<Rigidbody>().isKinematic = true;
+
                     IsCrarryingSomething = true;
 
                     if (_interactedObject.TryGetComponent<Goon_SitDown>(out Goon_SitDown sitDown))
                     {
-                        sitDown.PickUpLogic();
+                        sitDown.StandUp();
                         Debug.Log("Picked");
                     }
 
                     EventManager.onPickUp.Invoke(col.gameObject);
+
+                    
 
                     return;
                 }

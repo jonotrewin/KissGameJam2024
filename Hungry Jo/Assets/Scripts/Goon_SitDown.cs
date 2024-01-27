@@ -20,17 +20,22 @@ public class Goon_SitDown : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent<Chair>(out Chair chair) && !isSittingDown && !chair.occupied 
-            && !GetComponent<Throwable>()._isFlying)
+            )
         {
-            Debug.Log("Sitting");
-            transform.parent = chair.transform;
-            
-            chairSittingOn = chair;
-            rb.isKinematic = true;
-            isSittingDown = !isSittingDown;
-            Invoke("SnapToChair", 0.1f); //waits for throw script to resolve
+            SitDown(chair); //waits for throw script to resolve
 
         }
+    }
+
+    private void SitDown(Chair chair)
+    {
+        Debug.Log("Sitting");
+        transform.parent = chair.transform;
+
+        chairSittingOn = chair;
+        rb.isKinematic = true;
+        isSittingDown = true;
+        Invoke("SnapToChair", 0.1f);
     }
 
     private void SnapToChair()
@@ -39,13 +44,13 @@ public class Goon_SitDown : MonoBehaviour
         chairSittingOn.occupied = true;
     }
 
-    public void PickUpLogic()
+    public void StandUp()
     {
 
         chairSittingOn.occupied = false;
         transform.parent =null;
         rb.isKinematic = false;
-        isSittingDown = !isSittingDown;
+        isSittingDown = false;
         chairSittingOn = null;
        
 

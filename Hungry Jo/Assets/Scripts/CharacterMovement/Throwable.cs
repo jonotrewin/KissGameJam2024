@@ -52,5 +52,7 @@ public class Throwable : MonoBehaviour, ICarryable
                 _isFlying = false;
             }
         }
+
+      
     }
 }

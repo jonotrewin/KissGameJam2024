@@ -15,6 +15,20 @@ public class Chair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider[] colliders= Physics.OverlapSphere(this.transform.position, 2f);
         
+        foreach(Collider col in colliders)
+        {
+            if (col.TryGetComponent<Goon_SitDown>(out Goon_SitDown goon) && goon.isSittingDown)
+            {
+                occupied = true;
+
+                return;
+            }
+            else occupied = false;
+        }
+           
+        
+
     }
 }
