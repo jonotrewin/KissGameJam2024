@@ -7,8 +7,8 @@ using Random = UnityEngine.Random;
 
 public class Bar : MonoBehaviour, IInteract
 {
-    
-    List<KeyCode> _currentKeysForCocktail = new List<KeyCode>();
+    CharacterMovement interactingPlayer;
+    public List<KeyCode> _currentKeysForCocktail = new List<KeyCode>();
 
     [SerializeField]bool _listeningToKeySequence = false;
 
@@ -23,6 +23,11 @@ public class Bar : MonoBehaviour, IInteract
     void IInteract.Interact(GameObject player)
     {
         if(!_listeningToKeySequence)Invoke("SwitchToTrue", 0.1f);
+
+        interactingPlayer = player.GetComponent<CharacterMovement>();
+        
+        interactingPlayer.canMove = false;
+
     }
 
     private void SwitchToTrue()
@@ -47,6 +52,7 @@ public class Bar : MonoBehaviour, IInteract
         }
         if(Input.GetKeyDown(KeyCode.E) ||  _currentKeysForCocktail.Count >=4)
         {
+            interactingPlayer.GetComponent<CharacterMovement>().canMove = true;
             _listeningToKeySequence = false;
             if (_currentKeysForCocktail.Count < 1 )
             {
@@ -54,7 +60,8 @@ public class Bar : MonoBehaviour, IInteract
             }
             CreateCocktail();
             _currentKeysForCocktail.Clear();
-            
+           
+
 
         }
     }

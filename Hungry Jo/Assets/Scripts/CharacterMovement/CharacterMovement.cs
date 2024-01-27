@@ -19,6 +19,8 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] GameObject _floorAimingCircle;
 
+    public bool canMove = true;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -31,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
 
-        _characterController.Move(new Vector3(-yDirection, 0, xDirection) * Time.deltaTime * _speed);
+       if(canMove) _characterController.Move(new Vector3(-yDirection, 0, xDirection) * Time.deltaTime * _speed);
 
         LocateMouse();
 
