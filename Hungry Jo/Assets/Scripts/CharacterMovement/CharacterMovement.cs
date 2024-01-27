@@ -15,6 +15,10 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector3 _mousePosition;
 
+    [SerializeField] LayerMask _floorLayer;
+
+    [SerializeField] GameObject _floorAimingCircle;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
@@ -33,6 +37,8 @@ public class CharacterMovement : MonoBehaviour
 
         RotateVisual();
 
+        MoveAimCircle();
+
         //if (Input.GetMouseButtonDown(0))
         //{
         //    transform.position = _mousePosition;
@@ -41,7 +47,21 @@ public class CharacterMovement : MonoBehaviour
         
     }
 
-    
+    private void MoveAimCircle()
+    {
+        if (GetComponent<CarryObject>().IsCrarryingSomething)
+        {
+            _floorAimingCircle.transform.position = new Vector3(_mousePosition.x, 0.1f, _mousePosition.z);
+        }
+        else
+        {
+            _floorAimingCircle.transform.position = new Vector3(_mousePosition.x, -1, _mousePosition.z);
+        }
+
+
+
+
+    }
 
     private void RotateVisual()
     {
@@ -52,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, _floorLayer))
         {
             _mousePosition = new Vector3(hit.point.x, 1, hit.point.z);
 

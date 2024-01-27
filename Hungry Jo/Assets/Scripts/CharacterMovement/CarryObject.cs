@@ -11,7 +11,7 @@ public class CarryObject : MonoBehaviour
 
     private Vector3 _mousePosition;
 
-    bool _isCrarryingSomething;
+    public bool IsCrarryingSomething;
 
     // Start is called before the first frame update
 
@@ -37,7 +37,7 @@ public class CarryObject : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (_isCrarryingSomething)
+            if (IsCrarryingSomething)
             {
                 ThrowObject();
             }
@@ -50,7 +50,7 @@ public class CarryObject : MonoBehaviour
     {
         //_interactedObject.GetComponent<Rigidbody>().isKinematic = false;
 
-        _isCrarryingSomething = false;
+        IsCrarryingSomething = false;
 
         LocateMouse();
 
@@ -89,7 +89,7 @@ public class CarryObject : MonoBehaviour
 
     private void CarryInteractedObject()
     {
-        if (_isCrarryingSomething)
+        if (IsCrarryingSomething)
         {
             //_interactedObject.GetComponent<Rigidbody>().isKinematic = true;
 
@@ -113,7 +113,7 @@ public class CarryObject : MonoBehaviour
                 {
                     _interactedObject = col.gameObject;
 
-                    _isCrarryingSomething = true;
+                    IsCrarryingSomething = true;
 
 
 
