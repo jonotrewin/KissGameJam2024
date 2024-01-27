@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167546537553737349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5723256, y: -1.2611351, z: -7.466303}
+  m_LocalPosition: {x: 4.964515, y: -1.2611351, z: 10.632006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 3167546537838237057}
   - component: {fileID: 3167546537838237056}
   m_Layer: 0
-  m_Name: Curve 1
+  m_Name: Curve 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3167546538632151299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9641397, y: 4.738865, z: -3.926714}
+  m_LocalPosition: {x: 0.95794916, y: 4.738865, z: 6.1422687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
