@@ -13,6 +13,8 @@ public class CarryObject : MonoBehaviour
 
     public bool IsCrarryingSomething;
 
+    [SerializeField] GameObject _interactUI;
+
     // Start is called before the first frame update
 
 
@@ -28,6 +30,9 @@ public class CarryObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckForObjectToInteractWith();
+
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             InteractWithObject();
@@ -49,6 +54,30 @@ public class CarryObject : MonoBehaviour
             }
 
             
+        }
+    }
+
+    private void CheckForObjectToInteractWith()
+    {
+        Collider[] interactables = Physics.OverlapSphere(this.transform.position + _characterVisual.transform.forward * 1.5f, 1.5f);
+
+        foreach (Collider col in interactables)
+        {
+            
+
+            if (col.TryGetComponent<IInteract>(out IInteract interactable))
+            {
+                _interactUI.SetActive(true);
+                //interactable.Interact(gameObject);
+
+                return;
+            }
+            else
+            {
+                _interactUI.SetActive(false);
+            }
+
+
         }
     }
 
