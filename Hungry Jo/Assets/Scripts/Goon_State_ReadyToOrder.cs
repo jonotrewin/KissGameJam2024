@@ -25,11 +25,8 @@ public class Goon_State_ReadyToOrder : BasicState, IInteract
     // Start is called before the first frame update
     public override void UpdateLogic()
     {
+        goonStateMachine._statistics.LowerHappiness(1);
         base.UpdateLogic();
-
-
-
-
     }
     
     public void OnMouseDown()

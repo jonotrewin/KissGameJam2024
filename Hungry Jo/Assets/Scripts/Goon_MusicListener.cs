@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drink : MonoBehaviour, ICarryable
+public class Goon_MusicListener : MonoBehaviour
 {
     // Start is called before the first frame update
-    public List<KeyCode> _cocktailKeyRecipe;
-
-    
     void Start()
     {
         
@@ -17,10 +14,5 @@ public class Drink : MonoBehaviour, ICarryable
     void Update()
     {
         
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("HOLA");
     }
 }

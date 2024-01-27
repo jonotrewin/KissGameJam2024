@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 5100429768317555899}
   - component: {fileID: 5100429768317555780}
   - component: {fileID: 5100429768317555781}
-  - component: {fileID: 5100429768317555897}
   - component: {fileID: 5100429768317555896}
   - component: {fileID: 6864887702150455216}
+  - component: {fileID: 369429170240028583}
   m_Layer: 0
   m_Name: TestGoon
   m_TagString: Untagged
@@ -198,19 +198,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5100429768317555897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5100429768317555782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822dd82bea3740a42b0ea62d5909908e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsMoveable: 1
 --- !u!114 &5100429768317555896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,3 +226,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsMoveable: 1
   Curve: {fileID: 3167546537838237056, guid: 741108726680d084ca328480c9724e7a, type: 3}
+--- !u!114 &369429170240028583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5100429768317555782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5fe4d2e87299ac4fad3b32e7ffd873c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testDrink: {fileID: 0}
+  orderSequence: 

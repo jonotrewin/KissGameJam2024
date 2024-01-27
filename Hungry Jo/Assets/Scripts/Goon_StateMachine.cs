@@ -5,7 +5,7 @@ using UnityEngine;
 public class Goon_StateMachine : StateMachine
 {
     private Goon_State_ReadyToOrder _readyToOrder;
-    [SerializeField]Goon_Statistics _statistics;
+    [SerializeField]public Goon_Statistics _statistics;
     private void Start()
     {
         _readyToOrder = new Goon_State_ReadyToOrder(this);

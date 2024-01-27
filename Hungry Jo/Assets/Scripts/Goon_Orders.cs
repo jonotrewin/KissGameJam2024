@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goons_Orders : MonoBehaviour
+public class Goon_Orders : MonoBehaviour
 {
     [SerializeField] Drink testDrink;
 
