@@ -31,17 +31,20 @@ public class CarryObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
+        //CheckForObjectToInteractWith();
         CheckForGoonsToInteractWith();
 
-        
-
-        if (IsCrarryingSomething)
+        if (_tabletUI != null)
         {
-            _interactUI.SetActive(false);
-            _tabletUI.SetActive(false);
+            if (IsCrarryingSomething)
+            {
+                _interactUI.SetActive(false);
+                _tabletUI.SetActive(false);
+            }
         }
+
+        
 
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -126,7 +129,7 @@ public class CarryObject : MonoBehaviour
 
     private void SetUITexts(GameObject goonGameObject)
     {
-        throw new NotImplementedException();
+       
     }
 
     private void CheckForObjectToInteractWith()
