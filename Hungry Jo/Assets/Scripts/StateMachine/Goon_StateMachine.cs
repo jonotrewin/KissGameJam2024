@@ -8,6 +8,7 @@ public class Goon_StateMachine : StateMachine
     public Goon_State_ReadyToOrder _readyToOrder;
     public Goon_State_Drinking _drinking;
     public Goon_State_Leave _leave;
+    public Goon_State_Angry _angry;
 
 
     [SerializeField]public Goon_Statistics _statistics;
@@ -20,6 +21,7 @@ public class Goon_StateMachine : StateMachine
         _readyToOrder = new Goon_State_ReadyToOrder(this);
         _drinking = new Goon_State_Drinking(this);
         _leave = new Goon_State_Leave(this);
+        _angry = new Goon_State_Angry(this);
 
       
 
@@ -39,9 +41,19 @@ public class Goon_StateMachine : StateMachine
 
     }
 
-    
+    private void Update()
+    {
+        base.Update();
+        if(_statistics.CurrentHappiness < GameSettingsManager.instance.angryThreshold)
+        {
+            _currentState = _angry;
+            _statistics.loseReputationOnThrowOut = false;
+        }
+    }
 
-   
+
+
+
 
 
 }

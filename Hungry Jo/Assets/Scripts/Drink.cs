@@ -29,6 +29,7 @@ public class Drink : MonoBehaviour, ICarryable
                 {
                     gsm.ChangeStates(gsm._drinking);
                     gsm._statistics.hasDrink = true;
+                    gsm.GetComponent<Goon_Statistics>().RaiseHappiness(GameSettingsManager.instance.giveDrinkHappinessIncrease);
                     Destroy(this.gameObject);
                 }
             }

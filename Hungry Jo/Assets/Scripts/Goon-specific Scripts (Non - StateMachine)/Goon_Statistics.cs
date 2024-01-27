@@ -15,8 +15,8 @@ public class Goon_Statistics : MonoBehaviour
     [SerializeField] float _currentHappiness;
     public float CurrentHappiness { get { return _currentHappiness; } }
 
-    [SerializeField]float happinessLowerAmount = 0.1f;
-    [SerializeField]float happinessRaiseAmount = 0.1f;
+    [SerializeField]float happinessLowerAmount = 0.00001f;
+    [SerializeField]float happinessRaiseAmount = 0.00001f;
 
     [SerializeField] float _musicColourMatchModifier = 0.9f;
 
@@ -60,21 +60,21 @@ public class Goon_Statistics : MonoBehaviour
 
        Mathf.Clamp(_currentHappiness, 0, _maxHappiness);
     }
-    private void OnEnable()
+    private void Start()
     {
-        _currentHappiness = _maxHappiness*0.5f;
+        _currentHappiness = 100;
     }
 
     public void LowerHappiness(float multiplier)
     {
         if(lowerHappiness)
-        _currentHappiness -= (happinessLowerAmount * multiplier);
+        _currentHappiness -= (GameSettingsManager.instance.happinessDecrease * multiplier);
     }
 
     public void RaiseHappiness(float multiplier)
     {
 
-        _currentHappiness += (happinessRaiseAmount * multiplier);
+        _currentHappiness += (GameSettingsManager.instance.happinessIncrease * multiplier);
     }
 
     
