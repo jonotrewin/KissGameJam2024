@@ -13,10 +13,21 @@ public class Bar : MonoBehaviour, IInteract
     [SerializeField]bool _listeningToKeySequence = false;
 
     [SerializeField]GameObject[] _drinks;
-   
+
+    [SerializeField]OrderManager _orderManager;
+
+    private void Awake()
+    {
+        _orderManager = GameObject.FindObjectOfType<OrderManager>();
+    }
     void IInteract.Interact(GameObject player)
     {
-       _listeningToKeySequence = true;
+        if(!_listeningToKeySequence)Invoke("SwitchToTrue", 0.1f);
+    }
+
+    private void SwitchToTrue()
+    {
+        _listeningToKeySequence = true;
     }
 
     void Update()
@@ -26,20 +37,24 @@ public class Bar : MonoBehaviour, IInteract
 
     void ListenToKeys()
     {
-        foreach (KeyCode key in OrderManager.singleton.keyCodesForOrders)
+        foreach (KeyCode key in _orderManager.keyCodesForOrders)
         {
-            if(Input.GetKeyDown(key))
+            if( Input.GetKeyDown(key))
             {
                 
                 _currentKeysForCocktail.Add(key);
             }
         }
-        if(Input.GetKeyDown(KeyCode.E) || _currentKeysForCocktail.Count >=4)
+        if(Input.GetKeyDown(KeyCode.E) ||  _currentKeysForCocktail.Count >=4)
         {
-           
+            _listeningToKeySequence = false;
+            if (_currentKeysForCocktail.Count <= 1 )
+            {
+                return;
+            }
             CreateCocktail();
             _currentKeysForCocktail.Clear();
-            _listeningToKeySequence = false;
+            
 
         }
     }
