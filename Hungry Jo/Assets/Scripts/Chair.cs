@@ -24,10 +24,11 @@ public class Chair : MonoBehaviour
                 occupied = true;
                 return;
             }
-            else occupied = false;
+            
         }
-           
-        
+        occupied = false;
+
+
 
     }
 }

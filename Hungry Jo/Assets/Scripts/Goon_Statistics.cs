@@ -22,6 +22,9 @@ public class Goon_Statistics : MonoBehaviour
 
     [SerializeField] bool lowerHappiness = true;
 
+    [SerializeField] public bool loseReputationOnThrowOut = true;
+    [SerializeField] public bool hasDrink = false;
+
 
     public void SetTabletDate()
     {
@@ -51,7 +54,7 @@ public class Goon_Statistics : MonoBehaviour
             //Debug.Log("Happy!");
         }
 
-       // Mathf.Clamp(_currentHappiness, 0, _maxHappiness);
+       Mathf.Clamp(_currentHappiness, 0, _maxHappiness);
     }
     private void OnEnable()
     {

@@ -27,8 +27,9 @@ public class Drink : MonoBehaviour, ICarryable
             {
                 if(gsm.GetComponent<Goon_Orders>().TestDrink(_cocktailKeyRecipe))
                 {
-                    gsm.ChangeStates(gsm._waitingToBeSeated);
-                    Destroy(this);
+                    gsm.ChangeStates(gsm._drinking);
+                    gsm._statistics.hasDrink = true;
+                    Destroy(this.gameObject);
                 }
             }
         }

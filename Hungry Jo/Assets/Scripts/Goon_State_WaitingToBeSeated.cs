@@ -9,7 +9,7 @@ public class Goon_State_WaitingToBeSeated : BasicState
 
     public Goon_State_WaitingToBeSeated(Goon_StateMachine gsm) : base("WaitingToBeSeated", gsm)
     {
-       _gSM= gsm;
+       _gSM=gsm;
     }
 
     public override void UpdateLogic()
@@ -21,8 +21,7 @@ public class Goon_State_WaitingToBeSeated : BasicState
         {
             stateMachine.ChangeStates(_gSM._readyToOrder);
             Debug.Log("Ready To Order!");
-            
-        }
+                    }
 
         base.UpdateLogic();
     }
