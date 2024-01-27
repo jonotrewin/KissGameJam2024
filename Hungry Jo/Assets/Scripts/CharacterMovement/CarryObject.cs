@@ -14,6 +14,7 @@ public class CarryObject : MonoBehaviour
     public bool IsCrarryingSomething;
 
     [SerializeField] GameObject _interactUI;
+    [SerializeField] GameObject _tabletUI;
 
     // Start is called before the first frame update
 
@@ -31,6 +32,8 @@ public class CarryObject : MonoBehaviour
     void Update()
     {
         CheckForObjectToInteractWith();
+
+        CheckForGoonsToInteractWith();
 
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -54,6 +57,50 @@ public class CarryObject : MonoBehaviour
             }
 
             
+        }
+    }
+
+    private void CheckForGoonsToInteractWith()
+    {
+        if (IsCrarryingSomething) return;
+
+        Collider[] interactables = Physics.OverlapSphere(this.transform.position + _characterVisual.transform.forward * 1.5f, 1.5f);
+
+        foreach (Collider col in interactables)
+        {
+
+
+            if (col.TryGetComponent<ICarryable>(out ICarryable interactable))
+            {
+                if (col.gameObject.CompareTag("Goon"))
+                {
+                    if (_tabletUI != null)
+                    {
+                        _tabletUI.SetActive(true);
+
+
+                    }
+                }
+
+                
+
+                //interactable.Interact(gameObject);
+
+                return;
+            }
+            else
+            {
+                if (_tabletUI != null)
+                {
+                    _tabletUI.SetActive(false);
+                }
+                //_interactUI.SetActive(false);
+            }
+
+
+
+
+
         }
     }
 
@@ -84,6 +131,9 @@ public class CarryObject : MonoBehaviour
                 }
                 //_interactUI.SetActive(false);
             }
+
+            
+            
 
 
         }
@@ -168,24 +218,15 @@ public class CarryObject : MonoBehaviour
 
                     EventManager.onPickUp?.Invoke(col.gameObject);
 
-                    
-
                     return;
                 }
-
-                
 
             }
 
             if (col.TryGetComponent<IInteract>(out IInteract interactable))
             {
 
-
                 interactable.Interact(gameObject);
-
-               
-
-
 
                 return;
             }
