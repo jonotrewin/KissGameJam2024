@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -36,9 +37,26 @@ public class Goon_State_ReadyToOrder : BasicState, IInteract
             Debug.Log("Order Interrupted!");
 
         }
+
+        CheckForRivalGangSitting();
         
 
         base.UpdateLogic();
     }
-   
+
+    private void CheckForRivalGangSitting()
+    {
+        Collider[] colliders = Physics.OverlapSphere(stateMachine.transform.position, GameSettingsManager.instance.DistanceToEnemyGangToAnger);
+
+        foreach(Collider collider in colliders)
+        {
+           if(collider.TryGetComponent<Goon_SitDown>(out Goon_SitDown sitDown) && sitDown.isSittingDown)
+            {
+                sitDown.GetComponent<Goon_Statistics>().LowerHappiness(GameSettingsManager.instance.enemyGangProximityDamageMultiplier);
+                goonStateMachine._statistics.LowerHappiness(GameSettingsManager.instance.enemyGangProximityDamageMultiplier);
+
+            }
+        }    
+
+    }
 }

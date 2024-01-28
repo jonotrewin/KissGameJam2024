@@ -15,7 +15,8 @@ public class GameSettingsManager : MonoBehaviour
     public float angryEffectRadius = 100;
     public float angryEffectStrength = 1; //a value of 1 will additionally lower it at the same rate as they are normally lowered when waiting
 
-    public float DistanceToEnemyGangToAnger = 5; 
+    public float DistanceToEnemyGangToAnger = 5;
+    public float enemyGangProximityDamageMultiplier = 1;
 
 
     private void Start()
