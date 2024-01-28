@@ -19,8 +19,7 @@ public class Goon_SitDown : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.TryGetComponent<Chair>(out Chair chair) && !isSittingDown && !chair.occupied 
-            )
+        if (collision.gameObject.TryGetComponent<Chair>(out Chair chair) && !isSittingDown && !chair.occupied )
         {
             SitDown(chair); //waits for throw script to resolve
 

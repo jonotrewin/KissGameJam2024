@@ -898,6 +898,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a73f699b37fbfa54d93654148a55e761, type: 3}
+--- !u!1001 &1219875652
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5781894751245320282, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_Name
+      value: Chair (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.91485655
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -3.5518866e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.40377903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 8.047637e-11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -47.629
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781894751245320287, guid: 8ad180acae9e6664abe4595cf94ee07c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ad180acae9e6664abe4595cf94ee07c, type: 3}
 --- !u!1 &1420805298 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5100429768317555782, guid: f6f56d16dc470fe45a41e7500618713a,
@@ -990,6 +1059,7 @@ MonoBehaviour:
   angryEffectRadius: 100
   angryEffectStrength: 1
   DistanceToEnemyGangToAnger: 15
+  enemyGangProximityDamageMultiplier: 1
 --- !u!4 &1513990309
 Transform:
   m_ObjectHideFlags: 0
