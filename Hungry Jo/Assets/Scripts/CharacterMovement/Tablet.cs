@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Tablet : MonoBehaviour
 {
+    [SerializeField] GameObject NoJuiceSign;
+
     [SerializeField] TextMeshProUGUI _gangTeamUI;
     [SerializeField] TextMeshProUGUI _musicUI;
     [SerializeField] TextMeshProUGUI _orderUI;
@@ -27,5 +29,14 @@ public class Tablet : MonoBehaviour
         _musicUI.text = InteractedGoonMusicName;
         _orderUI.text = InteractedGoonOrder;
         _slider.value = InteractedGoonMoodValue;
+
+        if (Bar.JuicceLevel <= 0)
+        {
+            NoJuiceSign.SetActive(true);
+        }
+        else
+        {
+            NoJuiceSign.SetActive(false);
+        }
     }
 }
