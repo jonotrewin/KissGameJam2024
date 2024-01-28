@@ -222,7 +222,7 @@ public class CarryObject : MonoBehaviour
         {
             //_interactedObject.GetComponent<Rigidbody>().isKinematic = true;
 
-            _interactedObject.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
+            _interactedObject.transform.position = new Vector3(transform.position.x, transform.position.y + 5, transform.position.z);
 
             _interactedObject.transform.rotation = _characterVisual.transform.rotation;
 

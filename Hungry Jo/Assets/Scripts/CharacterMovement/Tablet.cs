@@ -30,7 +30,7 @@ public class Tablet : MonoBehaviour
         _orderUI.text = InteractedGoonOrder;
         _slider.value = InteractedGoonMoodValue;
 
-        if (Bar.JuicceLevel <= 0)
+        if (Bar.JuiceLevel <= 0)
         {
             NoJuiceSign.SetActive(true);
         }

@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Bar : MonoBehaviour, IInteract
 {
-    public static int JuicceLevel = 5;
+    public static int JuiceLevel = 5;
 
     CharacterMovement interactingPlayer;
     public List<KeyCode> _currentKeysForCocktail = new List<KeyCode>();
@@ -19,18 +19,16 @@ public class Bar : MonoBehaviour, IInteract
     [SerializeField]OrderManager _orderManager;
 
     [SerializeField]BarUI barUI;
-
-    [SerializeField] JuiceLevels juiceLevels;
     private void Awake()
     {
         _orderManager = GameObject.FindObjectOfType<OrderManager>();
-        juiceLevels = GetComponent<JuiceLevels>();
+       
        
        
     }
     void IInteract.Interact(GameObject player)
     {
-        if (JuicceLevel <= 0) return;
+        if (JuiceLevel <= 0) return;
 
         if(!_listeningToKeySequence)Invoke("SwitchToTrue", 0.1f);
 
@@ -96,7 +94,7 @@ public class Bar : MonoBehaviour, IInteract
 
         GameObject cocktail = Instantiate(_drinks[Random.Range(0, _drinks.Length)]);
 
-        JuicceLevel--;
+        JuiceLevel--;
 
         for (int i = 0; i < _currentKeysForCocktail.Count; i++)
         {

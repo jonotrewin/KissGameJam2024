@@ -22,9 +22,9 @@ public class Grinder : MonoBehaviour
         {
             Destroy(other.gameObject);
 
-            if (Bar.JuicceLevel <= 0)
+            if (Bar.JuiceLevel <= 0)
             {
-                Bar.JuicceLevel = 5;
+                Bar.JuiceLevel = 5;
             }
 
             

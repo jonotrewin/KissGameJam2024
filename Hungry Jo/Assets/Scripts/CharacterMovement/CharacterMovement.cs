@@ -33,7 +33,7 @@ public class CharacterMovement : MonoBehaviour
         float xDirection = Input.GetAxis("Horizontal");
         float yDirection = Input.GetAxis("Vertical");
 
-       if(canMove) _characterController.Move(new Vector3(-yDirection, 0, xDirection) * Time.deltaTime * _speed);
+       if(canMove) _characterController.Move(new Vector3(yDirection, 0, -xDirection) * Time.deltaTime * _speed);
 
         LocateMouse();
 
@@ -57,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
-            _floorAimingCircle.transform.position = new Vector3(_mousePosition.x, -1, _mousePosition.z);
+            _floorAimingCircle.transform.position = new Vector3(_mousePosition.x, 0.1f, _mousePosition.z);
         }
 
 
