@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2452571101292955328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2452571101292955330}
+  - component: {fileID: 2452571101292955329}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2452571101292955330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452571101292955328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.073576, y: -8.278879, z: -13.7096405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2452571101292955329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2452571101292955328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f49bad2c742a48a5bcae16a6b910a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - Name: Rockabilly
+    Clip: {fileID: 8300000, guid: da0d299311e598048a1391dcb5b64244, type: 3}
+    Volume: 0.47
+    Pitch: 1.19
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Disco
+    Clip: {fileID: 8300000, guid: 51c9eb12be9ffc94fac73a0051cae577, type: 3}
+    Volume: 0.51
+    Pitch: 1.07
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Jazz
+    Clip: {fileID: 8300000, guid: cf777bb57aca1634c991ef2cbbb07ae3, type: 3}
+    Volume: 0.66
+    Pitch: 0.49
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Angru
+    Clip: {fileID: 8300000, guid: 9a0b3d41ba25cff4baf5e0d42f7a28b3, type: 3}
+    Volume: 0.66
+    Pitch: 1.6
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Hovering
+    Clip: {fileID: 8300000, guid: 3da8e75a7d352434d9d77cf75f0bfe0d, type: 3}
+    Volume: 0.66
+    Pitch: 1.6
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Button01
+    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
+    Volume: 0.66
+    Pitch: 1.6
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Button02
+    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
+    Volume: 0.66
+    Pitch: 0.58
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Button03
+    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
+    Volume: 0.109
+    Pitch: 0.58
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Grinding
+    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
+    Volume: 0.109
+    Pitch: 0.58
+    Loop: 0
+    Source: {fileID: 0}
