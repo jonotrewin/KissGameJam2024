@@ -271,56 +271,74 @@ MonoBehaviour:
   sounds:
   - Name: Rockabilly
     Clip: {fileID: 8300000, guid: da0d299311e598048a1391dcb5b64244, type: 3}
-    Volume: 0.47
-    Pitch: 1.19
-    Loop: 0
+    Volume: 0.1
+    Pitch: 1
+    Loop: 1
     Source: {fileID: 0}
   - Name: Disco
     Clip: {fileID: 8300000, guid: 51c9eb12be9ffc94fac73a0051cae577, type: 3}
-    Volume: 0.51
-    Pitch: 1.07
-    Loop: 0
+    Volume: 0.1
+    Pitch: 1
+    Loop: 1
     Source: {fileID: 0}
   - Name: Jazz
     Clip: {fileID: 8300000, guid: cf777bb57aca1634c991ef2cbbb07ae3, type: 3}
-    Volume: 0.66
-    Pitch: 1.6
+    Volume: 0.1
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: Angru
-    Clip: {fileID: 8300000, guid: 9a0b3d41ba25cff4baf5e0d42f7a28b3, type: 3}
+  - Name: Angry
+    Clip: {fileID: 8300000, guid: 0346cdbafd7b0d44eaa3a36b2686e798, type: 3}
     Volume: 0.66
-    Pitch: 1.6
+    Pitch: 2.07
     Loop: 0
     Source: {fileID: 0}
   - Name: Hovering
-    Clip: {fileID: 8300000, guid: 3da8e75a7d352434d9d77cf75f0bfe0d, type: 3}
-    Volume: 0.66
-    Pitch: 1.6
-    Loop: 0
+    Clip: {fileID: 8300000, guid: 80f3e9eb08f68b8418bba7f6c98c5bce, type: 3}
+    Volume: 0.71
+    Pitch: 0.65
+    Loop: 1
     Source: {fileID: 0}
-  - Name: Button01
+  - Name: Button1
     Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
     Volume: 0.66
-    Pitch: 1.6
+    Pitch: 0.46
     Loop: 0
     Source: {fileID: 0}
-  - Name: Button02
+  - Name: Button2
     Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
     Volume: 0.66
-    Pitch: 0.58
+    Pitch: 0.75
     Loop: 0
     Source: {fileID: 0}
-  - Name: Button03
+  - Name: Button3
+    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
+    Volume: 0.17
+    Pitch: 1.44
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Button4
     Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
     Volume: 0.109
-    Pitch: 0.58
+    Pitch: 2.11
     Loop: 0
     Source: {fileID: 0}
-  - Name: Grinding
-    Clip: {fileID: 8300000, guid: 127ba21149c2f95439544a54e69cc50e, type: 3}
-    Volume: 0.109
-    Pitch: 0.58
+  - Name: throwing
+    Clip: {fileID: 8300000, guid: cb3282ec0e6ea2a4d9128d92b7359084, type: 3}
+    Volume: 0.85
+    Pitch: 1.78
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: CorkPop
+    Clip: {fileID: 8300000, guid: 2a716a616e8b13e40bc27c7f10583bc4, type: 3}
+    Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: CorkPop
+    Clip: {fileID: 8300000, guid: 2a716a616e8b13e40bc27c7f10583bc4, type: 3}
+    Volume: 0.5
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
 --- !u!4 &452264734
