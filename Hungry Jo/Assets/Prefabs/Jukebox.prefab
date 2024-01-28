@@ -68,10 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17aaebaab4c11674897b9e2b87ddb308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songNames:
-  - Rockabilly
-  - Disco
-  - Jazz
   _musicGenrePlaying: 0
 --- !u!1001 &263588858602217907
 PrefabInstance:
