@@ -11,6 +11,8 @@ public class Goon_Statistics : MonoBehaviour
 
     [SerializeField] private Goon_Statistics.Colour _gangColour;
 
+    public Colour GoonColor;
+
     [SerializeField] int _maxHappiness = 100;
     [SerializeField] float _currentHappiness;
     public float CurrentHappiness { get { return _currentHappiness; } }
@@ -62,6 +64,8 @@ public class Goon_Statistics : MonoBehaviour
     }
     private void Start()
     {
+        GoonColor = _gangColour;
+
         _currentHappiness = 100;
     }
 

@@ -22,6 +22,10 @@ public class SpawnerGoon : MonoBehaviour
 
     GameObject[] GoonTypes = new GameObject[4];
 
+    bool _isSpawningemphty = true;
+
+    int _numberOfPeopleWaiting = 1;
+
     private void Start()
     {
         GoonTypes[0] = RedGoonPrefab;
@@ -35,22 +39,52 @@ public class SpawnerGoon : MonoBehaviour
 
     private void SpawnGoon()
     {
+        //_time = 0;
         System.Random random = new System.Random();
 
         // Generate a random number between 0 and 3 (inclusive)
 
         Instantiate(GoonTypes[random.Next(0, 4)], transform.position, Quaternion.identity);
+
+        _numberOfPeopleWaiting--;
+        _isSpawningemphty = false;
     }
 
     void Update()
     {
+
+
         _time += Time.deltaTime;
 
         if (_time >= _spawnDelay)
         {
-            SpawnGoon();
-
             _time = 0;
+            //SpawnGoon();
+
+            
+
+            if (_isSpawningemphty)
+            {
+                SpawnGoon();
+                return;
+            }
+
+            _numberOfPeopleWaiting++;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Goon"))
+        {
+            if (_numberOfPeopleWaiting > 0)
+            {
+                SpawnGoon();
+            }
+            else
+            {
+                _isSpawningemphty = true;
+            }
         }
     }
 }
