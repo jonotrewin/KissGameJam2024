@@ -20,7 +20,15 @@ public class Grinder : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goon"))
         {
-            other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
+
+            if (Bar.JuiceLevel <= 0)
+            {
+                Bar.JuiceLevel = 5;
+            }
+
+            
+            //other.gameObject.SetActive(false);
         }
     }
 

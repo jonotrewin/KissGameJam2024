@@ -54,6 +54,7 @@ public class Goon_State_ReadyToOrder : BasicState, IInteract
             {
                 sitDown.GetComponent<Goon_Statistics>().LowerHappiness(GameSettingsManager.instance.enemyGangProximityDamageMultiplier);
                 goonStateMachine._statistics.LowerHappiness(GameSettingsManager.instance.enemyGangProximityDamageMultiplier);
+                Debug.Log("Enemy Gang Spotted");
 
             }
         }    
