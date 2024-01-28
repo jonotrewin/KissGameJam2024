@@ -7,33 +7,33 @@ using Random = UnityEngine.Random;
 
 public class Bar : MonoBehaviour, IInteract
 {
-    public static int JuiceLevel = 5;
+    public static int JuiceLevelNumber = 5;
 
     CharacterMovement interactingPlayer;
     public List<KeyCode> _currentKeysForCocktail = new List<KeyCode>();
 
-    [SerializeField]bool _listeningToKeySequence = false;
+    [SerializeField] bool _listeningToKeySequence = false;
 
-    [SerializeField]GameObject[] _drinks;
+    [SerializeField] GameObject[] _drinks;
 
-    [SerializeField]OrderManager _orderManager;
+    [SerializeField] OrderManager _orderManager;
 
-    [SerializeField]BarUI barUI;
+    [SerializeField] BarUI barUI;
     private void Awake()
     {
         _orderManager = GameObject.FindObjectOfType<OrderManager>();
-       
-       
-       
+
+
+
     }
     void IInteract.Interact(GameObject player)
     {
-        if (JuiceLevel <= 0) return;
+        if (JuiceLevelNumber <= 0) return;
 
-        if(!_listeningToKeySequence)Invoke("SwitchToTrue", 0.1f);
+        if (!_listeningToKeySequence) Invoke("SwitchToTrue", 0.1f);
 
         interactingPlayer = player.GetComponent<CharacterMovement>();
-        
+
         interactingPlayer.canMove = false;
 
     }
@@ -45,24 +45,44 @@ public class Bar : MonoBehaviour, IInteract
 
     void Update()
     {
-        if (_listeningToKeySequence) 
-        { 
+        if (_listeningToKeySequence)
+        {
             ListenToKeys();
             barUI.gameObject.SetActive(true);
         }
-       
+        AssignSounds();
     }
 
+    void AssignSounds()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            AudioManager.instance.PlayOnce("Button01");
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            AudioManager.instance.PlayOnce("Button02");
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            AudioManager.instance.PlayOnce("Button03");
+        }
+        else if (Input.GetKeyDown(KeyCode.V))
+        {
+            AudioManager.instance.PlayOnce("Button04");
+        }
+    }
     void ListenToKeys()
     {
         foreach (KeyCode key in _orderManager.keyCodesForOrders)
         {
-            if( Input.GetKeyDown(key))
+            if (Input.GetKeyDown(key))
             {
                 //AudioManager.instance.PlayOnce(OrderManager.);
+                _currentKeysForCocktail.Add(key);
             }
         }
-        if(Input.GetKeyDown(KeyCode.E) ||  _currentKeysForCocktail.Count >=4)
+        if (Input.GetKeyDown(KeyCode.E) || _currentKeysForCocktail.Count >= 4)
         {
             interactingPlayer.GetComponent<CharacterMovement>().canMove = true;
             _listeningToKeySequence = false;
@@ -86,7 +106,7 @@ public class Bar : MonoBehaviour, IInteract
 
     private void CreateCocktail()
     {
-        foreach(KeyCode key in _currentKeysForCocktail)
+        foreach (KeyCode key in _currentKeysForCocktail)
         {
             Debug.Log(key);
         }
@@ -96,7 +116,7 @@ public class Bar : MonoBehaviour, IInteract
         AudioManager.instance.PlayOnce("CorkPop");
 
 
-        JuiceLevel--;
+        JuiceLevelNumber--;
 
         for (int i = 0; i < _currentKeysForCocktail.Count; i++)
         {
@@ -104,5 +124,5 @@ public class Bar : MonoBehaviour, IInteract
         }
     }
 
-   
+
 }

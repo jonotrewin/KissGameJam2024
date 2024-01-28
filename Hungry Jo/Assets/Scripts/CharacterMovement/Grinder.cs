@@ -30,21 +30,21 @@ public class Grinder : MonoBehaviour
             {
                 //float happiness = other.gameObject.GetComponent<Goon_Statistics>().CurrentHappiness + 50;
 
-                _slider.value += 100;
+                //_slider.value += 100;
 
                 Destroy(other.gameObject);
 
-                if (Bar.JuicceLevel <= 0)
+                if (Bar.JuiceLevelNumber <= 0)
                 {
-                    Bar.JuicceLevel = 5;
+                    Bar.JuiceLevelNumber = 5;
                 }
 
                 return;
             }
 
-            if (Bar.JuiceLevel <= 0)
+            if (Bar.JuiceLevelNumber <= 0)
             {
-                Bar.JuiceLevel = 5;
+                Bar.JuiceLevelNumber = 5;
             }
 
             //float happinessTwo = other.gameObject.GetComponent<Goon_Statistics>().CurrentHappiness - 100;
