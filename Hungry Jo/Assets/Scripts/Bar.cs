@@ -57,8 +57,7 @@ public class Bar : MonoBehaviour, IInteract
         {
             if( Input.GetKeyDown(key))
             {
-                
-                _currentKeysForCocktail.Add(key);
+                //AudioManager.instance.PlayOnce(OrderManager.);
             }
         }
         if(Input.GetKeyDown(KeyCode.E) ||  _currentKeysForCocktail.Count >=4)
@@ -91,7 +90,7 @@ public class Bar : MonoBehaviour, IInteract
         }
 
         GameObject cocktail = Instantiate(_drinks[Random.Range(0, _drinks.Length)]);
-
+        AudioManager.instance.PlayOnce("CorkPop");
         for (int i = 0; i < _currentKeysForCocktail.Count; i++)
         {
             cocktail.GetComponent<Drink>()._cocktailKeyRecipe.Add(_currentKeysForCocktail[i]);

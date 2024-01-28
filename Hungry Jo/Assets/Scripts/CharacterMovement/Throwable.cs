@@ -46,6 +46,7 @@ public class Throwable : MonoBehaviour, ICarryable
             _sampleTime += Time.deltaTime * speed;
             transform.position = Curve.Evaluate(_sampleTime);
             transform.forward = Curve.Evaluate(_sampleTime) - transform.position;
+            
 
             if (_sampleTime >= 1f)
             {

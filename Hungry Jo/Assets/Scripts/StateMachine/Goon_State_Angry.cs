@@ -14,6 +14,7 @@ public class Goon_State_Angry : BasicState
     }
     public override void Enter()
     {
+        AudioManager.instance.Play("Angry");
         base.Enter();
        
     }

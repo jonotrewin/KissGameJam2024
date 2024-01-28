@@ -179,6 +179,8 @@ public class CarryObject : MonoBehaviour
     {
         //_interactedObject.GetComponent<Rigidbody>().isKinematic = false;
 
+        AudioManager.instance.PlayOnce("throwing");
+
         IsCrarryingSomething = false;
 
         LocateMouse();

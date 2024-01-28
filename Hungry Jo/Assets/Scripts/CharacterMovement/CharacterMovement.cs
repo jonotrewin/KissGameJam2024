@@ -20,14 +20,18 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] GameObject _floorAimingCircle;
 
     public bool canMove = true;
+    bool _isMoving;
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
 
-    
-    
+    private void Start()
+    {
+        AudioManager.instance.Play("Hovering");
+    }
+
     void Update()
     {
         float xDirection = Input.GetAxis("Horizontal");
@@ -41,13 +45,11 @@ public class CharacterMovement : MonoBehaviour
 
         MoveAimCircle();
 
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    transform.position = _mousePosition;
-        //}
-
-        
+        if (xDirection > 0) _isMoving = true;
+        else _isMoving = false;
     }
+
+
 
     private void MoveAimCircle()
     {
@@ -60,10 +62,8 @@ public class CharacterMovement : MonoBehaviour
             _floorAimingCircle.transform.position = new Vector3(_mousePosition.x, -1, _mousePosition.z);
         }
 
-
-
-
     }
+
 
     private void RotateVisual()
     {
